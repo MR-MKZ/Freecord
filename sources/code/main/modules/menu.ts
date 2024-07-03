@@ -284,7 +284,7 @@ export function bar(repoLink: string, parent: Electron.BrowserWindow): Electron.
       ]
     },
     {label: "Our Discord Server", click: () => {
-      void shell.openExternal("https://discord.com/invite/4tYaHApx").catch(commonCatches.throw);
+      void shell.openExternal("https://discord.com/invite/8RjX9sKMsy").catch(commonCatches.throw);
     }}
   ]);
   Menu.setApplicationMenu(menu);

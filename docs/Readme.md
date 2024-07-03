@@ -62,4 +62,4 @@ Temporary you can just connect to Freecord using default socks and http proxies 
 [codeql-badge]: https://img.shields.io/github/actions/workflow/status/Mr-MKZ/Freecord/codeql-analysis.yml?label=Analysis&logo=github&logoColor=white&branch=master&event=push
 [codeql-url]: https://github.com/Mr-MKZ/Freecord/actions/workflows/codeql-analysis.yml "CodeQL Analysis status"
 [discord-badge]: https://img.shields.io/discord/972965161721811026?color=%2349a4d3&label=Support&logo=discord&logoColor=white
-[discord-url]: https://discord.com/invite/8RjX9sKMsy "Official support server on Discord!"
+[discord-url]: https://discord.com/invite/8RjX9sKMsy"Official support server on Discord!"
