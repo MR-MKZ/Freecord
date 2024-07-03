@@ -1,0 +1,123 @@
+{
+    "tray": {
+        "toggle": "Przełącz",
+        "quit": "Zakończ",
+        "mention": {
+            "one":"wzmianka",
+            "few":"wzmianki",
+            "many":"wzmianek",
+            "other":"wzmianek"
+        }
+    },
+    "context": {
+        "copy": "Kopiuj",
+        "paste": "Wklej",
+        "cut": "Wytnij",
+        "dictionaryAdd": "Dodaj do słownika",
+        "copyURL": "Kopiuj adres linku",
+        "copyURLText": "Kopiuj tekst linku",
+        "copyImage": "Kopiuj obraz",
+        "copyImageURL": "Kopiuj odnośnik do obrazu",
+        "inspectElement": "Zbadaj"
+    },
+    "menubar": {
+        "enabled": "Włączony",
+        "file": {
+            "groupName": "Plik",
+            "quit": "Zakończ",
+            "relaunch": "Uruchom ponownie",
+            "addon": {
+                "groupName": "Rozszerzenia",
+                "loadNode": "Załaduj dodatek Node.js",
+                "loadChrome": "Załaduj dodatek Chrome"
+            }
+        },
+        "edit": {
+            "groupName": "Edycja",
+            "undo": "Cofnij",
+            "redo": "Ponów",
+            "selectAll": "Zaznacz wszystko"
+        },
+        "view": {
+            "groupName": "Widok",
+            "reload": "Odśwież",
+            "forceReload": "Wymuś odświeżanie",
+            "devTools": "Narzędzia deweloperskie",
+            "resetZoom": "Resetuj rozmiar",
+            "zoomIn": "Powiększ",
+            "zoomOut": "Pomniejsz",
+            "fullScreen": "Przełącz pełny ekran"
+        },
+        "window": {
+            "groupName": "Okno",
+            "mobileMode": "Ukryj pasek boczny"
+        }
+    },
+    "windows": {
+        "about": "O aplikacji",
+        "settings": "Ustawienia",
+        "docs": "Dokumentacja",
+        "invite": "Zaproszenie"
+    },
+    "dialog": {
+        "common": {
+            "error": "Błąd",
+            "warning": "Uwaga",
+            "continue": "&Kontynuuj",
+            "yes": "&Tak",
+            "no": "&Nie",
+            "source": "Źródło"
+        },
+        "ver": {
+            "updateBadge": "[ZMIANY]",
+            "updateTitle": "Dostęna aktualizacja!",
+            "update": "Dostępna nowa wersja programu!",
+            "recent": "Aplikacja jest w najnowszej wersji!",
+            "devel": "Korzystasz z wersji rozwojowej aplikacji.",
+            "downgrade": "Wersja produkcyjna aplikacji jest nowsza niż stabilna!"
+        },
+        "permission": {
+            "request": {
+                "denied": "%s: Żądanie uprawnień do elementu „%s” odrzucone."
+            },
+            "check": {
+                "denied": "%s: Sprawdzenie uprawnień do elementu „%s” odrzucone."
+            },
+            "question": {
+                "title": "Obsługa żądań uprawnień",
+                "message": "Czy chcesz pozwolić Discordowi na dostęp do %s?",
+                "audio": "mikrofonu",
+                "video": "kamery",
+                "notifications": "powiadomień"
+            }
+        },
+        "mod": {
+            "nodeExt": "Dodatek Node.js Freecorda",
+            "crx": "Rozszerzenie Chrome/Chromium"
+        },
+        "externalApp": {
+            "title": "Otwieranie linku w programie zewnętrznym",
+            "message": "Strona usiłuje przekierować link o innym źródle pochodzenia do aplikacji zewnętrznej. Kontynuować mimo tego?"
+        },
+        "screenShare": {
+            "close": "Zamknij",
+            "sound": {
+                "unavailable": "Udostępnianie dźwięku nie jest dostępne na tej platformie.",
+                "system": "Udostępnij z dźwiękiem urządzenia."
+            },
+            "source": {
+                "entire": "Ekran komputera",
+                "screen": "Ekran"
+            }
+        }
+    },
+    "help": {
+        "groupName": "Pomoc",
+        "repo": "Repozytorium",
+        "bugs": "Zgłoś błąd"
+    },
+    "log": {
+        "singleInstance": "Przełączanie do istniejącego okna...",
+        "listenPort": "Nasłuchiwanie na porcie: %s."
+    }
+}

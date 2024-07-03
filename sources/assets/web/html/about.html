@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self' 'unsafe-inline'; connect-src 'self' https://avatars.githubusercontent.com https://github.com https://*.gravatar.com https://gravatar.com; img-src 'self' blob: data:"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/about.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div id="about-nav" class="selected">
+          <div class="content"></div>
+          <div id="nav-line"></div>
+        </div>
+        <div id="credits-nav">
+          <div class="content"></div>
+        </div>
+        <div id="licenses-nav">
+          <div class="content"></div>
+        </div>
+      </nav>
+      <img id="closebutton" src="../../icons/symbols/close.svg" />
+    </header>
+    <main>
+      <article id="about">
+        <div class="center">
+          <img id="logo" />
+          <h1 id="appName"></h1>
+          <h2 id="appVersion"></h2>
+          <p id="appDescription"></p>
+          <h3><a id="appRepo" rel="noreferrer" target="_blank"></a></h3>
+        </div>
+        <hr />
+        <div class="list">
+          <h3>Electron / Chromium / Node</h3>
+          <p id="versions"></p>
+        </div>
+
+        <div class="list">
+          <h3 id="featuresTitle"></h3>
+          <p id="features"></p>
+        </div>
+        <div class="list">
+          <h3 id="checksumTitle"></h3>
+          <p id="checksum"></p>
+        </div>
+      </article>
+      <article id="credits">
+        <div class="contributor">
+          <div>
+            <h2>
+              <a
+                href="https://github.com/SpacingBat3"
+                rel="noreferrer"
+                target="_blank"
+                >SpacingBat3</a
+              >
+            </h2>
+            <p class="description">
+              Security features and maintainer of the project
+            </p>
+          </div>
+        </div>
+        <div class="contributor">
+          <div>
+            <h2>
+              <a href="#" rel="noreferrer" target="_blank">ParsaBIG</a>
+            </h2>
+            <p class="description">graphist</p>
+          </div>
+        </div>
+      </article>
+      <article id="licenses">
+        <h2 id="appLicenseTitle"></h2>
+        <p id="appLicenseBody"></p>
+        <button id="showLicense"></button>
+        <hr />
+        <h2 id="thirdPartyLicensesTitle"></h2>
+        <p id="thirdPartyLicensesBody"></p>
+      </article>
+    </main>
+    <script>
+      /** @param {string} id */
+      function select(id, scroll = true) {
+        const element = document.getElementById(id);
+        const nav = document.getElementById(id + "-nav");
+        /** @type {NodeListOf<HTMLDivElement>} */
+        const allNavs = document.querySelectorAll("nav > div");
+        if (element && nav) {
+          if (!nav.classList.toString().includes("selected") && scroll)
+            scrollToElement(element);
+          for (const anyNav of allNavs)
+            if (anyNav !== nav) anyNav.classList.remove("selected");
+          nav.classList.add("selected");
+        }
+      }
+      /** @param {HTMLElement} element */
+      function scrollToElement(element) {
+        element.parentElement.scrollLeft = element.offsetLeft;
+      }
+      for (const element of document.querySelectorAll("nav > div")) {
+        element.addEventListener("click", () =>
+          select(element.id.replace("-nav", ""))
+        );
+        new IntersectionObserver(
+          (ratio) => {
+            if (ratio[0].intersectionRatio === 1)
+              select(element.id.replace("-nav", ""), false);
+          },
+          {
+            root: document.getElementsByTagName("main")[0],
+            threshold: 1,
+          }
+        ).observe(document.getElementById(element.id.replace("-nav", "")));
+      }
+      {
+        const main = document.getElementsByTagName("main")[0];
+        const scroller = document.getElementById("nav-line");
+        const licenses = document.getElementById("licenses");
+        function calcScroll() {
+          return main.scrollLeft / licenses.offsetLeft;
+        }
+        main.addEventListener("scroll", () =>
+          requestAnimationFrame(() => {
+            scroller.style.transform =
+              "translateX(" + scroller.clientWidth * calcScroll() * 2 + "px)";
+          })
+        );
+      }
+    </script>
+  </body>
+</html>

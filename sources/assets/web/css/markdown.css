@@ -1,0 +1,134 @@
+@import "./global.css";
+
+:root {
+    --header-height: 36px;
+}
+
+p, li, div {
+    font-size: 11pt;
+}
+
+img {
+    max-height: 256px;
+}
+
+code, pre {
+    font-size: 9pt;
+}
+
+sup {
+    font-size: 8pt;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--color-font-header);
+    font-family: var(--font-display);
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+    scroll-margin-top: 0.5em;
+}
+
+h1, h2 {
+    border-bottom: 2px solid var(--color-input-bg);
+    padding-bottom: 5px;
+}
+
+h1 {
+    margin-top: 0;
+}
+
+h1#freecord {
+    font-size: xx-large;
+}
+
+#markdown-body > h1:first-child,
+#markdown-body > h2:first-child,
+#markdown-body > h3:first-child,
+#markdown-body > h4:first-child,
+#markdown-body > h5:first-child,
+#markdown-body > h6:first-child {
+    margin-top: 0.5em;
+}
+
+html {
+    width: 100vw;
+    height: 100vh;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+}
+
+html, body {
+    margin: 0px;
+}
+
+article {
+    width: 100vw;
+    margin: 0px;
+    overflow: auto;
+    position: absolute;
+    top: var(--header-height);
+    bottom: 0;
+}
+
+#markdown-body {
+    margin: 0px 16px;
+    padding-top: 1em;
+}
+
+#markdown-header {
+    padding-right: 24px;
+    background-color: var(--color-bg-primary);
+    border-bottom: 2px solid var(--color-bg-secondary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    height: var(--header-height);
+}
+
+#menu-hamburger {
+    margin: 0px 5px;
+    padding: 4px;
+    width: 22px;
+    height: 22px;
+    border-radius: 8px;
+    transition: background-color 0.5s ease-in-out;
+}
+
+#markdown-header p {
+    font-family: var(--font-primary);
+    color: var(--color-font-header);
+    font-size: 16pt;
+    font-weight: bold;
+}
+
+#menu-hamburger:hover {
+    cursor: pointer;
+    background-color: #fff3;
+    transition: background-color 0.5s ease-in-out;
+}
+
+/*
+ * Many Markdown documents (or even GitHub AsciiDoc parser itself) uses tables
+ * as alert popups. 
+ */
+table > tbody > tr:only-child {
+    display: block;
+    border: solid 1px var(--color-bg-border);
+    background-color: var(--color-bg-secondary);
+    border-radius: 20px;
+}
+
+table.alert-info > tbody > tr:only-child {
+    background-color: rgba(var(--color-alert-info), 20%);
+    border-color: rgb(var(--color-alert-info));
+}
+
+table.alert-warn > tbody > tr:only-child {
+    background-color: rgba(var(--color-alert-warn), 20%);
+    border-color: rgb(var(--color-alert-warn));
+}

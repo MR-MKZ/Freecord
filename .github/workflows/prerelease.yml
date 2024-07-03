@@ -1,0 +1,64 @@
+name: Publish pre-release
+on:
+  push:
+    tags: ['*beta*']
+
+env:
+  FREECORD_BUILD: DEVEL
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    strategy:
+      matrix:
+        include:
+          - name: Linux
+            runner: ubuntu-20.04
+            arch: x64,arm64,armv7l
+          - name: Windows
+            runner: windows-latest
+            arch: x64,arm64,ia32
+          - name: macOS-x64
+            runner: macos-latest
+            arch: x64 #,arm64,universal
+          - name: macOS-arm64
+            runner: macos-14
+            arch: arm64
+
+    name: ${{ matrix.name }} (${{ matrix.arch }})
+    runs-on: ${{ matrix.runner }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.name == 'Windows' && 21 || 'latest' }}
+          cache: npm
+
+      - name: Lock Python version (macOS only)
+        if: ${{ matrix.runner == 'macos-latest' || matrix.runner == 'macos-14' }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+  
+      - name: Install dependencies (NPM)
+        run: npm ci
+
+      - name: TSC cache
+        uses: actions/cache@v4
+        with:
+          key: tsc-release
+          path: |
+            app
+            cache/tsc.json
+
+      - name: Publish distributables (${{ matrix.arch}})
+        uses: nick-fields/retry@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          retry_on: error
+          max_attempts: ${{ matrix.name == 'Windows' && 6 || 3 }}
+          timeout_minutes: ${{ matrix.name == 'Windows' && 15 || 10 }}
+          command: npm run publish -- -a ${{ matrix.arch }}

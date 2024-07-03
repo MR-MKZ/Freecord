@@ -1,0 +1,87 @@
+{
+  "$schema": "./schemas/schemastore/package.json",
+  "name": "freecord",
+  "productName": "Freecord",
+  "version": "1.0.0-beta",
+  "description": "A Discord clone but more secure + proxy feature | under construction",
+  "main": "app/code/common/main.js",
+  "scripts": {
+    "prepare": "husky",
+    "test": "tsc && eslint --cache --cache-location cache/eslint.json --ext .ts .",
+    "lint": "eslint --cache --cache-location cache/eslint.json --ext .ts .",
+    "build": "tsc",
+    "compile": "tsc",
+    "tsc": "tsc",
+    "watch": "tsc --watch",
+    "start": "tsc && electron .",
+    "package": "tsc && electron-forge package",
+    "make": "tsc && electron-forge make",
+    "publish": "tsc && electron-forge publish",
+    "prepack": "tsc && electron-forge package && echo 'This script will now fail to cancel creating a Node package...' && exit 1"
+  },
+  "author": {
+    "name": "Mr-MKZ",
+    "email": "karimierfan74@gmail.com",
+    "url": "https://github.com/Mr-MKZ"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mr-MKZ/Freecord"
+  },
+  "bugs": {
+    "url": "https://github.com/Mr-MKZ/Freecord/issues"
+  },
+  "homepage": "https://github.com/Mr-MKZ/Freecord#readme",
+  "devDependencies": {
+    "@electron-forge/cli": "^7.1.0",
+    "@electron-forge/maker-deb": "^7.1.0",
+    "@electron-forge/maker-dmg": "^7.1.0",
+    "@electron-forge/maker-flatpak": "^7.1.0",
+    "@electron-forge/maker-rpm": "^7.1.0",
+    "@electron-forge/maker-snap": "^7.1.0",
+    "@electron-forge/maker-squirrel": "^7.1.0",
+    "@electron-forge/maker-wix": "^7.1.0",
+    "@electron-forge/maker-zip": "^7.1.0",
+    "@electron-forge/plugin-fuses": "^7.1.0",
+    "@electron-forge/publisher-github": "^7.1.0",
+    "@electron/fuses": "^1.5.0",
+    "@reforged/maker-appimage": "^4.0.0",
+    "@stylistic/eslint-plugin": "^1.8.0",
+    "@tsconfig/strictest": "^2.0.0",
+    "@types/dompurify": "^3.0.1",
+    "@types/node": "^18.6.4",
+    "@types/semver": "^7.3.9",
+    "@types/source-map-support": "^0.5.4",
+    "@types/ws": "^8.5.1",
+    "@typescript-eslint/eslint-plugin": "^7.0.2",
+    "electron": "^30.0.0",
+    "eslint": "latest",
+    "eslint-import-resolver-typescript": "latest",
+    "eslint-plugin-import": "latest",
+    "husky": "^9.0.0",
+    "typescript": "^5.0.4"
+  },
+  "dependencies": {
+    "@spacingbat3/disconnection": "^1.0.3",
+    "@spacingbat3/kolor": "^4.0.0",
+    "deepmerge-ts": "^5.1.0",
+    "dompurify": "^3.0.1",
+    "highlight.js": "^11.4.0",
+    "marked": "^12.0.0",
+    "marked-gfm-heading-id": "^3.1.0",
+    "marked-highlight": "^2.0.1",
+    "semver": "^7.3.5",
+    "source-map-support": "^0.5.21",
+    "tslib": "^2.3.1",
+    "twemoji-colr-font": "^14.0.2"
+  },
+  "config": {
+    "forge": "./app/code/build/forge.mjs"
+  },
+  "engines": {
+    "node": "^16.10.0 || ^18.10.0 || >=19.0.0",
+    "npm": "^8.0.0 || ^9.0.0 || ^10.0.0"
+  },
+  "private": true
+}

@@ -1,0 +1,9 @@
+/** Twemoji **/
+@import url('../../../../node_modules/twemoji-colr-font/twemoji.css');
+
+:root {
+    --font-primary: sans-serif, Twemoji;
+    --font-display: sans-serif, Twemoji;
+    --font-code: monospace, Twemoji;
+    --font-headline: var(--font-display);
+}

@@ -1,0 +1,161 @@
+@import "./fonts.css";
+
+/* A CSS that imitates the Discord's style, with some minior tweaks. */
+
+:root {
+    --color-accent: #4185d3;
+    --color-accent-alt: #287baf;
+    --color-accent-light: 140, 202, 255;
+    --color-bg-primary: #36393F;
+    --color-bg-secondary: #2F3136;
+    --color-bg-border: #1B1C1F;
+    --color-font-settings: #8e9297;
+    --color-font-code: #b9bbbe;
+    --color-font-normal: #dcddde;
+    --color-font-header: #fff;
+    --color-link: #00A3E3;
+    --color-input-bg: #484C52;
+    --scrollbar-width: 7px;
+    --scrollbar-thumb: #202225;
+    --color-alert-info: 65, 133, 211;
+    --color-alert-warn: 248, 197, 29;
+}
+
+html {
+    margin: 0 10px;
+    user-select: none;
+    font-family: var(--font-primary);
+    background-color: var(--color-bg-primary);
+    color: var(--color-font-normal);
+    line-height: 1.5;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--color-font-header);
+    font-family: var(--font-display);
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+}
+
+::-webkit-scrollbar {
+    width: var(--scrollbar-width);
+    height: var(--scrollbar-width);
+    background-color: transparent;
+    border-radius: 25px;
+}
+
+::-webkit-scrollbar-thumb {
+    display: none;
+    background-color: var(--scrollbar-thumb);
+    border-radius: 25px;
+    box-sizing: border-box;
+    border: solid transparent 2px;
+}
+
+:hover > ::-webkit-scrollbar-thumb {
+    display: unset;
+}
+
+::-webkit-scrollbar-thumb:active {
+    background-color: var(--color-bg-border);
+}
+
+a {
+    color: var(--color-link);
+    text-decoration: unset;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin-bottom: 1em;
+}
+
+td, th {
+    padding: 8px;
+}
+
+tr:nth-child(odd) {
+    background-color: var(--color-bg-secondary);
+}
+
+th {
+    color: var(--color-font-header);
+    background-color: var(--color-accent);
+}
+
+html :not(pre) > code {
+    font-size: 0.8em;
+    padding: 4px;
+    margin-top: 0px;
+    background-color: var(--color-bg-secondary);
+    border-radius: 5px;
+}
+
+code {
+    font-family: var(--font-code);
+    font-size: 1em;
+}
+
+kbd {
+    position: relative;
+    font-size: 1em;
+    background-color: var(--color-input-bg);
+    color: var(--color-font-header);
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 3px;
+    box-shadow: var(--color-bg-border) 0px 4px;
+    border: 1px solid transparent;
+    padding: 2px 6px;
+    margin-right: 2px;
+    margin-left: 2px;
+    top: -1px;
+}
+
+kbd:active {
+    border-color: var(--color-bg-border);
+    box-shadow: inset var(--color-bg-primary) 0px -2px;
+    color: var(--color-font-normal);
+    top: 0px;
+    padding-bottom: 4px;
+}
+
+pre {
+    display: block;
+    border: 1px solid var(--color-bg-border);
+    padding: 16px 12px;
+    background-color: var(--color-bg-secondary);
+    color: var(--color-font-code);
+    font-family: var(--font-code);
+    overflow: auto;
+    border-radius: 15px;
+    font-size: 10pt;
+}
+
+li {
+    margin: 0.5em 0em;
+}
+
+a, img {
+    user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+}
+
+blockquote {
+    margin-inline-start: 30px;
+    padding-left: 10px;
+    border-left: 4px solid var(--color-input-bg);
+    color: var(--color-font-settings);
+}
+
+hr {
+    color: var(--color-input-bg);
+    background-color: var(--color-input-bg);
+    border: solid 2px var(--color-input-bg);
+}

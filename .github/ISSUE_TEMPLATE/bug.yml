@@ -1,0 +1,136 @@
+name: Bug Report
+description: File a bug report
+assignees: [SpacingBat3]
+labels: ['type:bug']
+body:
+  - type: markdown
+    id: notice
+    attributes:
+      value: |
+        <table>
+          <tr>
+            <td> ℹ️ </td>
+            <td> This project is still on process to switch to YAML forms. </td> 
+          </tr>
+          <tr>
+            <td> ⚠️ </td>
+            <td>
+              This bug report applies only to Freecord builds distributed
+              officially. These are distributables available on the GitHub
+              releases and <code>Freecord-git</code> PKGBUILD. <b>Please do not
+              open issues for unsupported distributable formats!</b> Please
+              refer <a href=https://github.com/Mr-MKZ/Freecord/blob/master/docs/FAQ.md#1-which-file-i-should-download>to the documentation</a>
+              for a list of currently recommended distributables for each
+              platform.
+            </td> 
+          </tr>
+        </table>
+  - type: checkboxes
+    id: acknowledgments
+    attributes:
+      label: Acknowledgements
+      description: |
+        These checklists will help to understand if the reported issue is
+        specific to Freecord, keep discussion at the currently opened issue
+        tickets and so on. Please fill them according to the real state of this
+        bug. Some of the checkboxes are optional and they does not have to be
+        checked, although verifying all of the situations would most likely
+        help to resolve this issue faster.
+      options:
+        - label: |
+            I have checked that there is no other issue describing the same or
+            similar problem that I currently have, regardless if it has been
+            closed or open.
+          required: true
+        - label: |
+            This bug affects [Discord website](https://discord.com/app).
+        - label: |
+            This issue is confirmed to be reproducible when Freecord is packaged
+            on at least all three latest supported Electron major releases.
+        - label: |
+            This issue is reproducible in Chrome, Chromium or any
+            Chromium-based browser, e.g Brave or Edge (please write in
+            *Additional Context* which browser you have used if it is neither
+            Chrome nor unmodified Chromium).
+        - label: |
+            There are no fixes done to `master` which resolves this issue.
+        - label: |
+            My issue describes one of the unstable and/or not fully implemented
+            features.
+        - label: |
+            I have found a workaround to mitigate or temporarily fix this issue
+            in affected releases (please write it in *Additional context* section
+            below).
+
+  - type: dropdown
+    id: platform
+    attributes:
+      label: Operating System / Platform
+      description: On which operating system you have encountered this issue?
+      multiple: true
+      options:
+        - 🪟️ Windows
+        - 🍎️ MacOS
+        - 🐧️ Linux
+    validations:
+      required: true
+      
+  - type: dropdown
+    id: architecture
+    attributes:  
+      label: Operating system architecture
+      description: |
+        What type of the operating system you were using? Is it for Intel/AMD
+        processors or ARM single-board computers and devices? Is it designed for
+        the 32-bit instruction set or the 64-bit ones?
+      multiple: true
+      options:
+        - ia32 (32-bit Intel/AMD)
+        - x64 (64-bit Intel/AMD)
+        - armv7l (32-bit ARM)
+        - aarch64 (64-bit ARM)
+    validations:
+      required: true
+
+  - type: input
+    id: electron_version
+    attributes:
+      label: Electron version
+      description: |
+        An Electron version used by the application. You can find this at
+        *About* window.
+      placeholder: e.g. v25.3.2
+    validations:
+      required: true
+      
+  - type: input
+    id: app_version
+    attributes:
+      label: Application version
+      description: | 
+        On which application version or versions you have encountered this bug?
+        You can check this at *About* window or using `--version` command-line flag.
+      placeholder: e.g. v4.3.0
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Bug description
+      description: What this issue is about? How others can reproduce it?
+      placeholder: A detailed information describing the issue...
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional context
+      description: |
+        Please write there additional details about this issue, like:
+          - workarounds and mitigations (if you have found any),
+          - OS details (e.g. if you are running app under XWayland or Wayland),
+          - hardware details (e.g. GPU vendor on issue with window/graphics rendering),
+          - screenshots or videos (please publish them directly into GitHub whenever possible).
+      placeholder: An additional information about this issue, images, videos...

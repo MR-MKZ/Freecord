@@ -1,0 +1,17 @@
+# Ignore build / packaging artifacts
+out/
+app/
+cache/
+# Ignore Node package managers artifacts
+node_modules/
+# Ignore foreign lockfiles
+*lock*
+!package-lock.json
+# Ignore hidden dirs with some exceptions
+# (these are likely used by text editors)
+.*/
+# GitHub – workflows, templates, configs etc.
+!.github/
+# Husky – Git hooks implementation 
+!.husky/
+.husky/_/

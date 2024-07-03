@@ -1,0 +1,337 @@
+@import "./global.css";
+
+:root {
+    --header-height: 48px;
+    --font-size-factor: 10pt;
+    --logo-size-factor: 96px;
+    --border-width: 2px;
+    --nav-width: 60vw;
+    --nav-elements: 3;
+    --animation: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+p, li, div, code {
+    font-size: var(--font-size-factor);
+}
+
+h3, p, li {
+    margin-bottom: var(--font-size-factor);
+}
+
+ul {
+    margin-top: 0;
+}
+
+html, body {
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+body {
+    height: calc(100vh - var(--header-height));
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: var(--header-height);
+    width: 100vw;
+    background-color: var(--color-bg-secondary);
+    position:absolute;
+    top:0;
+    left:0;
+    -webkit-app-region: drag;
+}
+
+header > * {
+    -webkit-app-region: no-drag;
+}
+
+img#logo {
+    width: var(--logo-size-factor);
+    height: var(--logo-size-factor);
+    align-self: center;
+}
+
+main {
+    width: 100vw;
+    display: flex;
+    flex-flow: row nowrap;
+    margin: 0;
+    margin-top: var(--header-height);
+    height: calc(100vh - var(--header-height));
+    overflow-x: hidden;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    border: var(--color-bg-secondary) solid var(--border-width);
+    box-sizing: border-box;
+}
+
+main > article {
+    display:flex;
+    flex-shrink: 0;
+    width: 100%;
+    height: 100%;
+    flex-flow: column nowrap;
+    padding: 8px 16px;
+    scroll-snap-align: center;
+    overflow-x: clip;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+}
+
+#nav-line {
+    width: 100%;
+    height: 2px;
+    background-color: rgb(var(--color-accent-light));
+    position: static;
+    bottom: 2px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header {
+    text-align: center;
+}
+
+div.center {
+    text-align: center;
+    align-self: center;
+}
+
+h1 {
+    margin-top: 0.5em;
+    font-size: calc(var(--font-size-factor) * 1.5);
+}
+
+h2 {
+    font-size: calc(var(--font-size-factor) * 1.2);
+    margin-bottom: 12px;
+}
+
+h3 {
+    font-size: calc(var(--font-size-factor) * 1.1);
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+}
+
+h1 ~ h2 {
+    margin-top: -.5em;
+}
+
+#licenses > a ~ p {
+    margin-top: 0em;
+}
+
+#licenses > a {
+    width: fit-content;
+}
+
+#about {
+    padding: 8px 48px;
+}
+
+#licenses h3 {
+    color: var(--color-link);
+    vertical-align: bottom;
+}
+
+#licenses h3 > small {
+    font-size: calc(var(--font-size-factor) * 0.8);
+}
+
+hr {
+    width: calc(100% - 4px);
+}
+
+nav {
+    display: flex;
+}
+
+nav > div div.content {
+    font-family: var(--font-display);
+    color: var(--color-font-settings);
+    font-size: var(--font-size-factor);
+    font-weight: bold;
+    width: calc(var(--nav-width) / var(--nav-elements));
+    border-radius: 5px;
+    padding: 6px;
+    margin-bottom: -2px;
+}
+
+nav > div div.content:hover {
+    background-color: rgba(255,255,255,.075);
+    transition: background-color var(--animation) 0.25s;
+}
+
+nav > div.selected div.content {
+    color: rgb(var(--color-accent-light));
+    background-color: rgba(var(--color-accent-light), 0.05);
+    transition: background-color var(--animation) 0.25s, color var(--animation) 0.1s;
+}
+
+nav > div.selected div.content:hover {
+    background-color: rgba(var(--color-accent-light), .1);
+    transition: background-color var(--animation) 0.25s;
+}
+
+nav > div div.line {
+    width: 0%;
+    height: 2px;
+    background-color: rgb(var(--color-accent-light));
+    position:static;
+    bottom: 2px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+nav > div.selected div.line {
+    width: 100%;
+    transition: width var(--animation) 0.25s;
+}
+
+div.person {
+    display: flex;
+}
+
+#closebutton {
+    height: calc(var(--header-height) * 0.3);
+    padding: 8px;
+    position: absolute;
+    right: 15px;
+    top: auto;
+    bottom: auto;
+    border-radius: 100%;
+}
+
+#closebutton:hover {
+    background-color: #fff1;
+}
+
+#closebutton:active {
+    background-color: #fff3;
+}
+
+img.profilePicture {
+    border-radius: 100%;
+}
+
+body {
+    display: none;
+}
+
+button {
+    width: fit-content;
+    color: rgb(var(--color-accent-light));
+    background-color: transparent;
+    align-self: flex-end;
+    text-transform: uppercase;
+    animation: backgroundease ease 0.4s paused;
+    font-size: calc(var(--font-size-factor)*0.9);
+    font-weight: bold;
+    letter-spacing: 2pt;
+    padding: 8px;
+    margin-top: -4px;
+    margin-bottom: 8px;
+    border: transparent;
+    outline: transparent;
+    cursor: pointer;
+}
+
+@keyframes backgroundease {
+    0% { background-color: rgba(var(--color-accent-light), 0)}
+    30% { background-color: rgba(var(--color-accent-light), 0.2)}
+    100% { background-color: rgba(var(--color-accent-light), 0);}
+}
+
+div.dialog {
+    opacity: 0;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: #0005;
+    animation: fadeIn 0.1s ease forwards;
+    -webkit-app-region: no-drag;
+}
+
+div.dialog > div {
+    opacity: 0;
+    transform: scale(0.88, 0.88);
+    margin: 0px 20px;
+    padding: 5px 16px;
+    background-color: var(--color-bg-primary);
+    border: solid var(--color-bg-secondary) 5px;
+    box-shadow: #0005 6px 10px 12px -2px;
+    box-sizing: border-box;
+    font-family: var(--font-code);
+    font-size: 9pt;
+    animation: resize 0.2s ease forwards;
+}
+
+div.list {
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 2px;
+}
+
+@keyframes fadeIn {
+    from  {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes resize {
+    from {
+        opacity: 0;
+        transform: scale(0.88, 0.88);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+}
+
+div.contributor {
+    display: flex;
+    flex-flow: row nowrap;
+    background-color: var(--color-bg-secondary);
+    padding: 4px 32px;
+    box-sizing: content-box;
+    border-radius: 16px;
+    margin-top: 4px;
+}
+
+div.contributor > img {
+    width: 96px;
+    height: 96px;
+    border-radius: 32px;
+}
+
+div.contributor h2, div.contributor h2 > a {
+    color: rgb(var(--color-accent-light));
+    text-decoration-skip-ink: none;
+    text-underline-position: under;
+}
+
+div.contributor > * ~ * {
+    margin-left: 16px;
+}
+
+a:focus-visible, button:focus-visible {
+    outline: none;
+    padding-left: 8px;
+    border-left: solid 1px rgb(var(--color-accent-light));
+}

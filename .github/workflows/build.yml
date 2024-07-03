@@ -1,0 +1,129 @@
+name: Build distributables
+on:
+  push:
+    branches-ignore:
+      - 'v*'
+    paths-ignore:
+      - 'docs/**'
+      - '.github/ISSUE_TEMPLATE/**'
+  pull_request:
+    paths-ignore:
+      - 'docs/**'
+      - '.github/ISSUE_TEMPLATE/**'
+    branches-ignore:
+      - 'v*'
+
+env:
+  FREECORD_BUILD: DEVEL
+
+permissions: {}
+
+jobs:
+  test:
+    strategy:
+      matrix:
+        deps: ['latest', 'locked']
+    name: "Test build"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: latest
+          cache: npm
+
+      - name: Install dependencies (NPM)
+        run: npm ci
+
+      - name: Update dependencies
+        if: ${{ matrix.deps == 'latest' }}
+        run: npm update
+
+      - name: TSC cache
+        uses: actions/cache@v4
+        with:
+          key: tsc-${{ matrix.deps }}
+          path: |
+            app
+            cache/tsc.json
+      
+      - name: ESLint cache
+        uses: actions/cache@v4
+        with:
+          key: eslint-${{ matrix.deps }}
+          path: |
+            cache/eslint.json
+
+      - name: Run tests with ${{ matrix.deps }} dependencies
+        run: npm test
+  make:
+    strategy:
+      fail-fast: false
+      matrix:
+        name: ['Linux', 'Windows', 'macOS-x64', 'macOS-arm64']
+        build: [latest, locked]
+        include:
+          - runner: ubuntu-20.04
+            name: Linux
+            arch: x64,arm64,armv7l
+          - runner: windows-latest
+            name: Windows
+            arch: x64,arm64,ia32
+          - runner: macos-latest
+            name: macOS-x64
+            arch: x64 #,arm64,universal
+          - runner: macos-14
+            name: macOS-arm64
+            arch: arm64
+
+    name: '${{ matrix.name }} (${{ matrix.build }})'
+    runs-on: ${{ matrix.runner }}
+    needs: ['test']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.name == 'Windows' && 21 || 'latest' }}
+          cache: npm
+
+      - name: Lock Python version (macOS only)
+        if: ${{ matrix.runner == 'macos-latest' || matrix.runner == 'macos-14' }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies (NPM)
+        run: npm ci
+
+      - name: Update dependencies
+        if: ${{ matrix.build == 'latest' }}
+        run: npm update
+
+      - name: TSC cache
+        uses: actions/cache@v4
+        with:
+          key: tsc-${{ matrix.build }}
+          path: |
+            app
+            cache/tsc.json
+
+      - name: Generate distributables (${{ matrix.arch }})
+        uses: nick-fields/retry@v2
+        with:
+          retry_on: error
+          max_attempts: 3
+          timeout_minutes: 10
+          command: npm run make -- -a ${{ matrix.arch }}
+
+      - name: Upload distributables as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.name }}_${{ matrix.build }}
+          path: out/devel/make/*
+
+      - name: Upload lockfile as artifact
+        if: ${{ matrix.build == 'latest' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.name }}-lockfile_updated
+          path: package-lock.json

@@ -1,0 +1,126 @@
+{
+    "tray": {
+        "toggle": "Toggle",
+        "quit": "Quit",
+        "mention": {
+            "one":"mention",
+            "other":"mentions",
+            "zero": "",
+            "two": "",
+            "few":"",
+            "many":""
+        }
+    },
+    "context": {
+        "copy": "Copy",
+        "paste": "Paste",
+        "cut": "Cut",
+        "dictionaryAdd": "Add to the local dictionary",
+        "copyURL": "Copy link address",
+        "copyURLText": "Copy link text",
+        "copyImage": "Copy image",
+        "copyImageURL": "Copy link to image",
+        "inspectElement": "Inspect"
+    },
+    "menubar": {
+        "enabled": "Enabled",
+        "file": {
+            "groupName": "File",
+            "quit": "Quit",
+            "relaunch": "Relaunch",
+            "addon": {
+                "groupName": "Extensions",
+                "loadNode": "Load node extension",
+                "loadChrome": "Load Chrome extension"
+            }
+        },
+        "edit": {
+            "groupName": "Edit",
+            "undo": "Undo",
+            "redo": "Redo",
+            "selectAll": "Select All"
+        },
+        "view": {
+            "groupName": "View",
+            "reload": "Reload",
+            "forceReload": "Force reload",
+            "devTools": "Toggle Developer Tools",
+            "resetZoom": "Actual size",
+            "zoomIn": "Zoom in",
+            "zoomOut": "Zoom out",
+            "fullScreen": "Toggle fullscreen"
+        },
+        "window": {
+            "groupName": "Window",
+            "mobileMode": "Hide side bar"
+        }
+    },
+    "windows": {
+        "settings": "Settings",
+        "about": "About",
+        "docs": "Documentation",
+        "invite": "Invite",
+        "proxy": "Proxy"
+    },
+    "dialog": {
+        "common": {
+            "error": "Error",
+            "warning": "Warning",
+            "continue": "&Continue",
+            "yes": "&Yes",
+            "no": "&No",
+            "source": "Source"
+        },
+        "ver": {
+            "updateBadge": "[UPDATE]",
+            "updateTitle": "Update available!",
+            "update": "New application version is available!",
+            "recent": "Application is up-to-date!",
+            "devel": "You're using the non-production build.",
+            "downgrade": "Your production build is newer than stable!"
+        },
+        "permission": {
+            "request": {
+                "denied": "%s: Permission request to %s denied."
+            },
+            "check": {
+                "denied": "%s: Permission check to %s denied."
+            },
+            "question": {
+                "title": "Permission request handler",
+                "message": "Do you want to grant Discord an access to the %s?",
+                "video": "camera",
+                "audio": "microphone",
+                "notifications": "notifications"
+            }
+        },
+        "mod": {
+            "nodeExt": "Freecord Node.js Addon",
+            "crx": "Chrome/Chromium Extension"
+        },
+        "externalApp": {
+            "title": "Opening link in external app",
+            "message": "A website tries to redirect the link with the different origin to the external application. Continue anyway?"
+        },
+        "screenShare": {
+            "close": "Close",
+            "sound": {
+                "unavailable": "Sharing audio is unavailable on this platform.",
+                "system": "Share with device audio."
+            },
+            "source": {
+                "entire": "Computer's screen",
+                "screen": "Screen"
+            }
+        }
+    },
+    "help": {
+        "groupName": "Help",
+        "repo": "Repository",
+        "bugs": "Report a bug"
+    },
+    "log": {
+        "singleInstance": "Switching to the existing window...",
+        "listenPort": "Listening at port %s."
+    }
+}

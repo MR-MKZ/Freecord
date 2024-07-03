@@ -1,0 +1,96 @@
+{
+    "menubar": {
+        "view": {
+            "reload": "Last inn igjen",
+            "devTools": "Veksle utviklerverktøy",
+            "resetZoom": "Faktisk størrelse",
+            "groupName": "Vis",
+            "zoomIn": "Forstørr",
+            "forceReload": "Påtving gjeninnlasting",
+            "zoomOut": "Forminsk",
+            "fullScreen": "Veksle fullskjermsvisning"
+        },
+        "file": {
+            "quit": "Avslutt",
+            "addon": {
+                "loadNode": "Last inn node-utvidelse",
+                "loadChrome": "Last inn Chrome-utvidelse",
+                "groupName": "Utvidelser"
+            },
+            "groupName": "Fil",
+            "relaunch": "Start igjen"
+        },
+        "edit": {
+            "undo": "Angre",
+            "groupName": "Rediger",
+            "redo": "Gjenta"
+        },
+        "enabled": "Påskrudd",
+        "window": {
+            "groupName": "Vindu",
+            "mobileMode": "Skjul sidefelt"
+        }
+    },
+    "tray": {
+        "toggle": "Veksle",
+        "quit": "Avslutt"
+    },
+    "context": {
+        "paste": "Lim inn",
+        "cut": "Klipp ut",
+        "copy": "Kopier",
+        "dictionaryAdd": "Legg til i lokal ordliste",
+        "copyURL": "Kopier lenkeadresse",
+        "copyURLText": "Kopier lenketekst",
+        "inspectElement": "Inspiser"
+    },
+    "dialog": {
+        "common": {
+            "warning": "Advarsel",
+            "continue": "&Fortsett",
+            "yes": "&Ja",
+            "no": "&Nei",
+            "source": "Kilde",
+            "error": "Feil"
+        },
+        "ver": {
+            "updateTitle": "Oppgradering tilgjengelig.",
+            "update": "Ny programversjon tilgjengelig.",
+            "recent": "Nyeste utgave av programmet er i bruk.",
+            "devel": "Du bruker et utviklingsbygg.",
+            "downgrade": "Din versjon er nyere enn den stabile versjonen.",
+            "updateBadge": "[OPPGRADER]"
+        },
+        "permission": {
+            "check": {
+                "denied": "%s: Tilgangssjekk for %s ble avslått."
+            },
+            "request": {
+                "denied": "%s: Tilgangsforespørsel til %s ble ikke innvilget."
+            }
+        },
+        "mod": {
+            "nodeExt": "Freecord-Node.js-tillegg",
+            "crx": "Chrome/Chromium-utvidelse"
+        },
+        "externalApp": {
+            "message": "La en nettside videresende lenken med forskjellig opphav til det eksterne programmet?",
+            "title": "Åpner lenke i eksternt program"
+        }
+    },
+    "help": {
+        "groupName": "Hjelp",
+        "bugs": "Rapporter en feil",
+        "repo": "Kodelager"
+    },
+    "log": {
+        "listenPort": "Lytter til port %s.",
+        "singleInstance": "Bytter til det eksisterende vinduet …"
+    },
+    "windows": {
+        "invite": "Invitasjon",
+        "about": "Om",
+        "docs": "Dokumentasjon",
+        "settings": "Innstillinger"
+    }
+}

@@ -1,0 +1,51 @@
+@import "./global.css";
+
+:root {
+    --content-width: 300px;
+}
+
+html, body {
+    margin: 0;
+    background-color: #36393F;
+    height: 100%;
+}
+
+body, div.aura {
+    text-align: center;
+    display: flex;
+    margin: 0px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+h1 {
+    margin-top: 0.5em;
+}
+
+.aura-content {
+    width: var(--content-width);
+    margin-left: calc(50vw - (var(--content-width)/2));
+    margin-right: calc(50vw - (var(--content-width)/2));
+    overflow: hidden;
+    white-space: normal;
+}
+
+.aura {
+    height: 100%;
+    width: 100%;
+    background-color: var(--color-accent);
+    animation-name: aura;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: clip;
+}
+
+@keyframes aura {
+    0% {width: 0%}
+    10% {width: 0%;background-color: var(--color-accent)}
+    100% {width: 100%;background-color: transparent}
+}

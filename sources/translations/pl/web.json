@@ -1,0 +1,37 @@
+{
+    "offline": {
+        "title": "Nie można połączyć z usługą Discord.",
+        "description": "Proszę sprawdzić połączenie z internetem."
+    },
+    "aboutWindow": {
+        "nav": {
+            "about": "O aplikacji",
+            "credits": "Zasługi",
+            "licenses": "Licencje"
+        },
+        "about": {
+            "appDescription": "Klient dla usług Discord i Fosscord z funkcjami skupionymi na prywatności.",
+            "appRepo": "Repozytorium GitHub",
+            "featuresTitle": "Flagi budowania",
+            "featuresDefault": "Domyślne",
+            "checksumTitle": "Suma kontrolna"
+        },
+        "credits": {
+            "people": {
+                "author": "Autor, opiekun i główny deweloper aplikacji.",
+                "contributors": {
+                    "default": "Współtwórca kodu."
+                }
+            }
+        },
+        "licenses": {
+            "appLicenseTitle": "Licencja aplikacji",
+            "appLicenseBody": "%s jest wolnym oprogramowaniem: możesz swobodnie modyfikować i rozpowszechniać to oprogramowanie zgodnie z warunkami licencji MIT, która powinna być dostarczona wraz z tym oprogramowaniem.",
+            "showLicense": "Wyświetl licencję",
+            "thirdPartyLicensesTitle": "Licencje firm trzecich",
+            "thirdPartyLicensesBody": "%s jest zależny od następującego oprogramowania firm trzecich:",
+            "licensedUnder": "na licencji %s",
+            "packageAuthors": "autorzy %s"
+        }
+    }
+}

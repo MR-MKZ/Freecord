@@ -1,0 +1,122 @@
+{
+    "context": {
+        "cut": "Ausschneiden",
+        "copyURL": "Link Adresse kopieren",
+        "copyURLText": "Link Text kopieren",
+        "inspectElement": "Untersuchen",
+        "copy": "Kopieren",
+        "paste": "Einfügen",
+        "dictionaryAdd": "Dem lokalen Wörterbuch hinzufügen",
+        "copyImage": "Bild kopieren",
+        "copyImageURL": "Link zum Bild kopieren"
+    },
+    "menubar": {
+        "enabled": "Aktiviert",
+        "file": {
+            "groupName": "Datei",
+            "quit": "Beenden",
+            "addon": {
+                "groupName": "Erweiterungen",
+                "loadChrome": "Chrome-Erweiterung laden",
+                "loadNode": "Lade Node.js erweiterung"
+            },
+            "relaunch": "Neu starten"
+        },
+        "edit": {
+            "groupName": "Bearbeiten",
+            "undo": "Rückgängig machen",
+            "redo": "Wiederherstellen",
+            "selectAll": "Alles auswählen"
+        },
+        "view": {
+            "reload": "Neu laden",
+            "forceReload": "Neuladen erzwingen",
+            "resetZoom": "Tatsächliche Größe",
+            "zoomIn": "Vergrößern",
+            "fullScreen": "Vollbild ein-/ausblenden",
+            "groupName": "Ansicht",
+            "devTools": "Entwickler-Tools umschalten",
+            "zoomOut": "Verkleinern"
+        },
+        "window": {
+            "groupName": "Fenster",
+            "mobileMode": "Seitenleiste ausblenden"
+        }
+    },
+    "windows": {
+        "settings": "Einstellungen",
+        "about": "Über",
+        "invite": "Einladen",
+        "docs": "Dokumentation"
+    },
+    "tray": {
+        "toggle": "Umschalten",
+        "quit": "Beenden",
+        "mention": {
+            "one": "erwähnen",
+            "other": "erwähnt",
+            "two": "Erwähnungen"
+        }
+    },
+    "dialog": {
+        "common": {
+            "error": "Fehler",
+            "warning": "Warnung",
+            "continue": "&Weiter",
+            "yes": "&Ja",
+            "no": "&Nein",
+            "source": "Quelle"
+        },
+        "ver": {
+            "updateBadge": "[UPDATE]",
+            "recent": "Anwendung ist aktuell!",
+            "devel": "Du verwendest den Nicht-Produktions-Build.",
+            "updateTitle": "Update verfügbar!",
+            "update": "Eine neue Version der Anwendung ist verfügbar!",
+            "downgrade": "Dein Produktions-Build ist neuer als Stabil!"
+        },
+        "mod": {
+            "crx": "Chrome/Chromium-Erweiterung",
+            "nodeExt": "Freecord Node.js Erweiterung"
+        },
+        "externalApp": {
+            "title": "Link in externer Anwendung öffnen",
+            "message": "Eine Website versucht, den Link mit einem anderen Ursprung auf eine externe Anwendung umzuleiten. Trotzdem weitermachen?"
+        },
+        "permission": {
+            "request": {
+                "denied": "%s: Berechtigungsanforderung an %s abgelehnt."
+            },
+            "check": {
+                "denied": "%s: Berechtigungsprüfung auf %s abgelehnt."
+            },
+            "question": {
+                "message": "Möchtest du Discord Zugriff auf \"%s\" gewähren?",
+                "video": "Kamera",
+                "audio": "Mikrofon",
+                "notifications": "Benachrichtigungen",
+                "title": "Berechtigungsanfrage-Handler"
+            }
+        },
+        "screenShare": {
+            "close": "Schließen",
+            "sound": {
+                "unavailable": "Das Teilen von Audio ist auf dieser Plattform nicht verfügbar.",
+                "system": "Mit Geräteaudio teilen."
+            },
+            "source": {
+                "entire": "Computerbildschirm",
+                "screen": "Bildschirm"
+            }
+        }
+    },
+    "help": {
+        "groupName": "Hilfe",
+        "repo": "Repository",
+        "bugs": "Einen Fehler melden"
+    },
+    "log": {
+        "singleInstance": "Wechsel zum vorhandenen Fenster...",
+        "listenPort": "Lauschen an Port %s."
+    }
+}
