@@ -27,6 +27,7 @@ async function handleEvents(docsWindow: Electron.BrowserWindow) {
   });
 }
 
+// eslint-disable-next-line import/no-unused-modules
 export default async function loadDocsWindow(parent: Electron.BrowserWindow) {
   const [
     { initWindow },  // from "../modules/parent"

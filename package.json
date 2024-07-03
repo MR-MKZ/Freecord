@@ -2,7 +2,7 @@
   "$schema": "./schemas/schemastore/package.json",
   "name": "freecord",
   "productName": "Freecord",
-  "version": "1.0.0-beta.2",
+  "version": "1.0.0-beta",
   "description": "A Discord clone but more secure + proxy feature | under construction",
   "main": "app/code/common/main.js",
   "scripts": {

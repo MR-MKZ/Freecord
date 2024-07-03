@@ -12,7 +12,8 @@
 
 <!-- [![CodeQL][codeql-badge]][codeql-url] [![Build][build-badge]][build-url] -->
 [![GitHub downloads][dlbadge]][downloads]
-[![Discord server][discord-badge]][discord-url]
+
+[Discord Server][discord-url]
 
 A Discord and [Spacebar] client implemented directly without [Discord API][discordapi].
 Made in Iran with the [Electron][electron] framework.
@@ -40,9 +41,9 @@ to prevent distinguishing it from the real Chrome/Chromium browsers.
 
 You can use proxies in Freecord, This feature is still under constructing but it will complete very soon.
 
-Temporary you can just connect to Freecord using default socks and http proxies of v2rayN and you are not able to change them [**Temporary**]. 
+Temporary you can just connect to Freecord using default http proxy of v2rayN and you are not able to change them [**Temporary**]. 
 
-(socks -> 127.0.0.1:10808, http -> 127.0.0.1:10809)
+(http -> 127.0.0.1:10809)
 
 [dlbadge]: https://img.shields.io/github/downloads/Mr-MKZ/Freecord/total.svg?label=Downloads&color=%236586B3
 [downloads]: https://github.com/Mr-MKZ/Freecord/releases "Releases"
@@ -61,5 +62,4 @@ Temporary you can just connect to Freecord using default socks and http proxies 
 [Electron#Security]: https://www.electronjs.org/docs/latest/tutorial/security "Security | Electron Documentation"
 [codeql-badge]: https://img.shields.io/github/actions/workflow/status/Mr-MKZ/Freecord/codeql-analysis.yml?label=Analysis&logo=github&logoColor=white&branch=master&event=push
 [codeql-url]: https://github.com/Mr-MKZ/Freecord/actions/workflows/codeql-analysis.yml "CodeQL Analysis status"
-[discord-badge]: https://img.shields.io/discord/972965161721811026?color=%2349a4d3&label=Support&logo=discord&logoColor=white
-[discord-url]: https://discord.com/invite/8RjX9sKMsy"Official support server on Discord!"
+[discord-url]: https://discord.com/invite/8RjX9sKMsy "Official support server on Discord!"

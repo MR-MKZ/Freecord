@@ -46,10 +46,10 @@ function generateIcon(icon: Icon)  {
 }
 
 export const defaultBuildInfo = Object.freeze({
-  type: "devel",
+  type: "release",
   ...(process.platform === "win32" ? {AppUserModelId: "MrMKZ.Freecord"} : {}),
   features: {
-    updateNotifications: false
+    updateNotifications: true
   }
 } as const satisfies Readonly<BuildInfo>);
 

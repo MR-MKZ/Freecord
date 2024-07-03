@@ -80,9 +80,9 @@ export default function createMainWindow(...flags: MainWindowFlags): BrowserWind
   });
 
   win.webContents.session.setProxy({
-    proxyRules: "http=127.0.0.1:10809, socks=127.0.0.1:10808",
-  }).then(() => {
-    console.log("proxy changed");
+    proxyRules: "http=127.0.0.1:10809,direct://",
+  }).then((a) => {
+    console.log("proxy changed ", a);
   }).catch((error: unknown) => {
     console.error(error);
     win.close();
